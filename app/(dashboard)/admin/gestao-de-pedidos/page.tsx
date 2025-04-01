@@ -59,7 +59,6 @@ const printOrder = (order: Order) => {
           <ul>
             ${order.items.map(item => `<li>${item.quantity}x ${item.name} - R$ ${item.price.toFixed(2)}</li> <br/> <li>${item.observation}</li>`).join('')}
           </ul>
-          <p><strong>Observação:</strong> ${order.observation}</p>
         </div>
         <script>window.print();</script>
       </body>
