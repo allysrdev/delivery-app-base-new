@@ -11,7 +11,6 @@ function formatarCentavosParaReais(centavos: number) {
 export default function CheckoutElement({
     amount,
     newAddress,
-    observation,
 }: { amount: number, newAddress?: string, isAddressWithinRadius: boolean | null, observation?: string }) {
     const stripe = useStripe();
     const elements = useElements()
@@ -50,7 +49,7 @@ export default function CheckoutElement({
             elements,
             clientSecret,
             confirmParams: {
-                return_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cart/checkout/return/sucess?amount=${amount}&paymentMethod=cartao${newAddress ? `&newAddress=${encodeURIComponent(newAddress)}` : ''} ${observation !== "" ? `&observation=${encodeURIComponent(observation as string)}` : ""}`,
+                return_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cart/checkout/return/sucess?amount=${amount}&paymentMethod=cartao${newAddress ? `&newAddress=${encodeURIComponent(newAddress)}` : ''}`,
             }
         })
         if (error) {
