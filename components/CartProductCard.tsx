@@ -38,19 +38,19 @@ function CartProductCard({ id, name, price, imageUrl, quantity, addToCart, remov
                   </Label>
                   <div className="flex gap-2">
                     <Textarea
-                      name="observation"
-                      placeholder="Ex: Sem verduras, maionese à parte [...]"
-                      className="w-full h-32 resize-y align-top text-xs"
-                      value={observation}
+                    name="observation"
+                    placeholder="Ex: Sem verduras, maionese à parte [...]"
+                    className="w-full h-32 resize-y align-top text-xs"
+                    value={observation}
                     onChange={(e) => {
-                      setObservation(e.target.value)
+                      const newValue = e.target.value;
+                      setObservation(newValue);
                       const item = cart.find((item) => item.id === id);
                       if (item) {
-                        item.observation = observation;
+                        item.observation = newValue;
                       }
-                      console.log(cart)
                     }}
-                    />
+                  />
                 </div>
                 
                 </div>
