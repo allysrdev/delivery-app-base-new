@@ -44,7 +44,6 @@ export const createOrder = async (
   paymentMethod?: string,
   status?: 'Cancelado'| 'Pendente' | 'Preparo' | 'Entrega' | 'Entregue',
   troco?: string,
-  observation?: string
 ): Promise<string | null> => {
   try {
     const db = getDatabase();
@@ -63,7 +62,6 @@ export const createOrder = async (
       status: status ? status : 'Pendente',
       paymentMethod: paymentMethod ? paymentMethod : 'Pagamento Online',
       troco: troco ? troco : 'Não necessário',
-      observation: observation ? observation : 'Sem observações'
 
     };
 

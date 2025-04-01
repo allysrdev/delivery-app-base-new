@@ -81,6 +81,7 @@ function Page() {
             paymentText || '',
             "Pendente",
             troco || '',
+            
         );
 
         // empty the cart
