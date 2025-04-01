@@ -1,0 +1,10 @@
+[lcl-host]
+realm-apid = 'localhost'
+
+[org]
+apid = 'allysrdev'
+
+[service]
+apid = 'delivery-app-base'
+category = 'javascript'
+cert-style = 'acme'
