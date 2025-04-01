@@ -49,7 +49,7 @@ function Page() {
             quantity: item.quantity,
             price: item.price,
             name: item.name,
-            observation: item.observation
+            observation: item.observation || 'Sem observações'
         }));
 
         const paymentMethod = searchParams.get('paymentMethod');
@@ -69,7 +69,6 @@ function Page() {
 
         const paymentText = paymentDescriptions[paymentMethod ?? ""] || "Método de pagamento não reconhecido";
 
-        // add observations from each item (item.observation)
         await createOrder(
             user?.userId || '',
             user?.telephone || '',

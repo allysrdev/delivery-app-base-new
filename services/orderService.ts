@@ -7,7 +7,7 @@ interface OrderItem {
   name: string;
   price: number;
   quantity: number;
-  observation?:string | "Sem observações"
+  observation?:string
 }
 
 // Interface para um pedido
@@ -24,7 +24,6 @@ export interface Order {
   status: 'Pendente' | 'Preparo' | 'Entrega' | 'Entregue' | 'Cancelado';
   paymentMethod: string;
   troco?: string;
-  observation?: string;
 }
 
 // Função para gerar um número de pedido aleatório

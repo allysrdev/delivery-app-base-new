@@ -73,7 +73,6 @@ export default function Page() {
                 status={order.status}
                 paymentMethod={order.paymentMethod}
                 troco={order.troco || ''}
-                observation={order.observation || ''}
               />
             ))
           )}
