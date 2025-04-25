@@ -156,7 +156,7 @@ export default function LoginPage() {
 
               <Link 
                 className='text-blue-500 hover:text-blue-600 underline flex items-center justify-center gap-2 text-xs w-full' 
-                href="/"
+                href="/forgot-password"
               >
                 Esqueci minha senha
               </Link>

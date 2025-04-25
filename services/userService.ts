@@ -1,5 +1,6 @@
 import { ref, set, get, update } from 'firebase/database';
 import { database } from './firebase'; // Importe a instância já inicializada
+import bcrypt from 'bcryptjs';
 
 export interface User {
   name: string;
@@ -51,23 +52,29 @@ export const getUser = async (email: string): Promise<User | null> => {
       return null;
     }
 
-    // Percorre os usuários e encontra o que tem o e-mail correspondente
-    let userData: User | null = null;
+    const emailLower = email.toLowerCase();
+    let foundUser: User | null = null;
+
     snapshot.forEach((childSnapshot) => {
       const user = childSnapshot.val();
-      if (user.email === email) {
-        userData = { userId: childSnapshot.key, ...user };
+
+      // Garante que estamos comparando os e-mails em lowercase
+      if (user.email && user.email.toLowerCase() === emailLower) {
+        foundUser = {
+          userId: childSnapshot.key ?? '', // Evita null
+          ...user,
+        };
       }
     });
 
-    if (!userData) {
-      console.log('Usuário não encontrado!');
+    if (!foundUser) {
+      console.log(`Usuário com e-mail "${email}" não encontrado.`);
     }
 
-    return userData;
+    return foundUser;
   } catch (error) {
     console.error('Erro ao buscar usuário:', error);
-    return null; // Retorno explícito para evitar `undefined`
+    return null;
   }
 };
 
@@ -123,5 +130,36 @@ export const getAllUsers = async (): Promise<User[] | null> => {
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
     throw new Error(`Falha ao buscar usuários: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
+  }
+};
+
+export const updateUserPasswordInDatabase = async (email: string, newPassword: string) => {
+  try {
+    const usersRef = ref(database, 'users');
+    const snapshot = await get(usersRef);
+
+    if (!snapshot.exists()) {
+      throw new Error('Nenhum usuário encontrado no banco de dados');
+    }
+
+    const users = snapshot.val();
+    const userId = Object.keys(users).find(uid => users[uid].email === email);
+
+    if (!userId) {
+      throw new Error('Usuário com esse e-mail não foi encontrado');
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const userRef = ref(database, `users/${userId}`);
+
+    await update(userRef, {
+      password: hashedPassword,
+      updated_at: new Date().toISOString(),
+    });
+
+    console.log('Senha atualizada com sucesso para o usuário:', email);
+  } catch (error) {
+    console.error('Erro ao atualizar a senha no Realtime Database:', error);
+    throw error;
   }
 };
