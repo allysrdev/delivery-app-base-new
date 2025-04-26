@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
 
     if (!token || !password) {
         return NextResponse.json({
-            error: "Token and password are required"
+            error: "Token e senha são obrigatórios!"
         }, {
             status: 400
         })
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
 
     if (!tokenSnap.exists()) {
         return NextResponse.json({
-            error: "Invalid or expired token"
+            error: "Token inválido ou expirado!"
         }, {
             status: 400
 
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     if (Date.now() > expires) {
         await remove(tokenRef)
         return NextResponse.json({
-            error: "Token expired"
+            error: "Token expirado!"
         }, {
             status: 400
         })

@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
     if (!email) {
         return NextResponse.json({
-            error: "Email is required"
+            error: "O e-mail é obrigatório!"
         }, {
             status: 400
         })
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const user = await getUser(email)
     if (!user) {
         return NextResponse.json({
-            error: "User not found"
+            error: "Usuário não encontrado!"
         }, {
             status: 404
         })
@@ -41,6 +41,6 @@ export async function POST(req: NextRequest) {
     await sendEmail(user.email, resetLink)
 
     return NextResponse.json({
-        message: "Reset link sent to your email"
+        message: "Um link de recuperação foi enviado para o seu e-mail"
     })
 }

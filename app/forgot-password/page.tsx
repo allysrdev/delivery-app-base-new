@@ -23,6 +23,8 @@ const formSchema = z.object({
 
 export default function ForgotPassword() {
     const [message, setMessage] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false)
+
 
     const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,6 +36,7 @@ export default function ForgotPassword() {
 
     
     async function onSubmit(values: z.infer<typeof formSchema>) {
+        setLoading(true)
         const res = await fetch('/api/forgot-password', {
             method: 'POST',
             body: JSON.stringify({
@@ -42,6 +45,11 @@ export default function ForgotPassword() {
         })
         const data = await res.json()
         setMessage(data.message || data.error)
+        setTimeout(() => {
+            setMessage("Você pode fechar esta aba agora.")
+            setLoading(false)
+        }, 2000)
+
         
     }
   return (
@@ -63,7 +71,7 @@ export default function ForgotPassword() {
                     <FormItem>
                     <FormLabel>E-mail</FormLabel>
                     <FormControl>
-                        <Input placeholder="seu@email.com" {...field} className='text-xs' />
+                        <Input placeholder="seu@email.com" {...field} className='text-xs' disabled={loading} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -77,8 +85,11 @@ export default function ForgotPassword() {
                  <Button 
                     className='bg-black/30 backdrop-blur-md border border-zinc-300 shadow-lg rounded-md p-4 cursor-pointer w-full' 
                     type="submit"
+                    disabled={loading}
                     >
-                    Receber Link
+                    {
+                              loading ? 'Enviando...' : 'Enviar'
+                    }
                     
                 </Button>
             </form>
