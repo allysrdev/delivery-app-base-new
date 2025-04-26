@@ -14,11 +14,13 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { getUser, User } from "@/services/userService";
+import { useStoreConfig } from "./context/StoreContext";
 
 export default function Home() {
   const { cart, addToCart, removeFromCart } = useCart();
   const session = useSession();
   const [user, setUser] = useState<User | null>(null);
+  const storeConfig = useStoreConfig();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -106,8 +108,11 @@ export default function Home() {
               <Button
                 onClick={() => redirect('/cart/checkout')}
                 className="w-full h-10 rounded-md bg-black/30 backdrop-blur-md border border-white/50 text-white shadow-lg flex items-center justify-center hover:bg-black/60 p-4 cursor-pointer"
+                disabled={!storeConfig.storeConfig.isDeliveryActive}
               >
-                Finalizar Compra
+                {
+                  storeConfig.storeConfig.isDeliveryActive ? 'Finalizar compra' : 'Loja fechada.' + storeConfig.storeConfig.workingHours
+                }
               </Button>
             </div>
           </div>
