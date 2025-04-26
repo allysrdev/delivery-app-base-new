@@ -1,6 +1,5 @@
 'use client';
 
-// Componentes e bibliotecas externas
 import Banner from "@/components/Banner";
 import Section from "@/components/Section";
 import StoreProfile from "@/components/StoreProfile";
@@ -40,7 +39,7 @@ export default function Home() {
   }, [user]);
 
   return (
-    <div className="flex flex-col gap-4 pb-14">
+    <div className="flex flex-col gap-4 pb-14 max-w-7xl mx-auto">
       <Banner />
       <StoreProfile />
       <Section />

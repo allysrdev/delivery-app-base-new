@@ -73,7 +73,7 @@ async function onSubmit() {
 
 
   return (
-      <div className='w-full h-[100vh] flex flex-col items-center gap-12 pt-3'>
+      <div className='w-full h-[100vh] flex flex-col items-center gap-12 pt-3 max-w-7xl mx-auto'>
          <Form {...form} >
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <FormField
