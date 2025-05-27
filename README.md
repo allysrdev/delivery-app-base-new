@@ -18,9 +18,9 @@ Este repositório representa um excelente exemplo de aplicação das tecnologias
 Este projeto implementa diversas funcionalidades essenciais para uma plataforma de delivery:
 
 *   🔐 **Autenticação Segura:** Sistema completo de Login, Cadastro e Recuperação de Senha utilizando **NextAuth.js**.
-*   🛍️ **Catálogo de Produtos e Busca:** Interface para visualização de produtos/restaurantes com funcionalidade de busca integrada.
+*   🛍️ **Catálogo de Produtos e Busca:** Interface para visualização de produtos com funcionalidade de busca integrada.
 *   🛒 **Carrinho de Compras Interativo:** Adição, remoção e visualização de itens no carrinho com estado gerenciado eficientemente.
-*   💳 **Checkout com Múltiplos Gateways:** Integração com **Stripe** e **Mercado Pago** para processamento seguro de pagamentos.
+*   💳 **Checkout com Múltiplos Gateways:** Integração com **Stripe** para processamento seguro de pagamentos.
 *   📋 **Gerenciamento de Pedidos:** Área para usuários visualizarem o histórico e o status de seus pedidos.
 *   📍 **Integração com Google Maps:** Utilização da API do Google Maps (potencial para busca de endereços, visualização de rotas, etc.).
 *   🖼️ **Gerenciamento de Imagens:** Integração com **Cloudinary** para upload, otimização e entrega de imagens.
