@@ -10,7 +10,7 @@ Este repositório representa um excelente exemplo de aplicação das tecnologias
 
 ## ✨ Demonstração 
 
-*   [Link para Demonstração Ao Vivo](https://demo.guaiamumdigital.com.br/) (Opcional)
+*   [Link para Demonstração Ao Vivo](https://demo.guaiamumdigital.com.br/) 
 
 
 ## 🚀 Funcionalidades Principais
