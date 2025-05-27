@@ -86,7 +86,6 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
     *   Renomeie o arquivo `.env.example` (se existir) para `.env`.
     *   Preencha as variáveis de ambiente necessárias no arquivo `.env`. Isso incluirá chaves de API para:
         *   Stripe (Publishable Key, Secret Key)
-        *   Mercado Pago (Access Token)
         *   Cloudinary (Cloud Name, API Key, API Secret)
         *   Google Maps API (API Key)
         *   NextAuth.js (NEXTAUTH_SECRET, NEXTAUTH_URL)
