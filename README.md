@@ -88,7 +88,7 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
         *   Cloudinary (Cloud Name, API Key, API Secret)
         *   Google Maps API (API Key)
         *   NextAuth.js (NEXTAUTH_SECRET, NEXTAUTH_URL)
-        *   _(Outras variáveis específicas do seu backend/DB, se houver)_
+        *   Firebase
 
 4.  **Execute o servidor de desenvolvimento:**
     ```bash
