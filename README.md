@@ -8,11 +8,7 @@ Bem-vindo ao **Delivery App Base**! Este projeto, desenvolvido por [@allysrdev](
 
 Este repositório representa um excelente exemplo de aplicação das tecnologias mais recentes do ecossistema React/Next.js, ideal para demonstrar competências técnicas a recrutadores e potenciais empregadores.
 
-## ✨ Demonstração / Screenshots
-
-_(**Recomendação:** Adicione aqui um link para uma demonstração ao vivo (se houver) e/ou screenshots/GIFs da aplicação em funcionamento para destacar visualmente as funcionalidades.)_
-
-**Exemplo:**
+## ✨ Demonstração 
 
 *   [Link para Demonstração Ao Vivo](https://demo.guaiamumdigital.com.br/) (Opcional)
 
