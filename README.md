@@ -41,7 +41,6 @@ Este projeto foi construído utilizando um stack moderno e performático:
     *   React Context API
 *   **Backend:**
     *   Next.js API Routes
-    *   _(Opcional: Mencionar banco de dados/ORM se aplicável, ex: Prisma + PostgreSQL)_
 *   **Autenticação:**
     *   [NextAuth.js](https://next-auth.js.org/)
 *   **Pagamentos:**
