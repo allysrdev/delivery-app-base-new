@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-Bem-vindo ao **Delivery App Base**! Este projeto, desenvolvido por [@allysrdev](https://github.com/allysrdev), é uma plataforma robusta e moderna construída com Next.js 14 (App Router), TypeScript e Tailwind CSS, servindo como uma base sólida e escalável para uma aplicação completa de delivery de comida. O objetivo é demonstrar habilidades full-stack na criação de aplicações web complexas, interativas e com foco na experiência do usuário.
+Bem-vindo ao **Borchelle Delivery App**! Este projeto, desenvolvido por [@allysrdev](https://github.com/allysrdev), é uma plataforma robusta e moderna construída com Next.js 14 (App Router), TypeScript e Tailwind CSS, servindo como uma base sólida e escalável para uma aplicação completa de delivery de comida. O objetivo é demonstrar habilidades full-stack na criação de aplicações web complexas, interativas e com foco na experiência do usuário.
 
 Este repositório representa um excelente exemplo de aplicação das tecnologias mais recentes do ecossistema React/Next.js, ideal para demonstrar competências técnicas a recrutadores e potenciais empregadores.
 
