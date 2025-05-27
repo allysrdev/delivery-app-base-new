@@ -111,12 +111,4 @@ Desenvolvido por **Allyson Santana** ([@allysrdev](https://github.com/allysrdev)
 *   **LinkedIn:** [https://linkedin.com/in/allysantanadev](https://github.com/allysrdev)
 *   **Email:** _(contato.allysantana@gmail.com)_
 
-## 📄 Licença
 
-_(**Recomendação:** Adicione uma licença ao seu projeto. Se não tiver uma, a licença MIT é uma escolha popular para projetos open-source.)_
-
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-
----
-
-*Este README foi gerado com o auxílio de IA para destacar os pontos fortes do projeto para recrutadores.*
